@@ -1,0 +1,34 @@
+
+
+
+{% extends "base_generic.html" %}
+
+<!--{% block title %}{{ section.title }}{% endblock %}-->
+
+{% block content %}
+    <ul>
+    {% for quiz in quizzes%}
+        <li>
+        <h3><a href="/quizzes/{{ quiz.id }}">{{ quiz.name }}</a></h3>
+        <p>{{ quiz.description }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+    <!--{% for quiz in quizzes%}-->
+        <!--<h3><a href="/quizzes/{{ quiz.id }}">{{ quiz.name }}</a></h3>-->
+        <!--<p>{{ quiz.description }}</p>-->
+    <!--{% endfor %}-->
+<!--</body>-->
+<!--</html>-->
