@@ -6,14 +6,15 @@
 <!--{% block title %}{{ section.title }}{% endblock %}-->
 
 {% block content %}
-    <ul>
+
+
     {% for quiz in quizzes%}
-        <li>
+
         <h3><a href="/quizzes/{{ quiz.id }}">{{ quiz.name }}</a></h3>
         <p>{{ quiz.description }}</p>
-        </li>
+
     {% endfor %}
-    </ul>
+
 {% endblock %}
 
 
