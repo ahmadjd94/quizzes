@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    {% for video in videos%}
+        <a href="/videos/{{video.id}}">{{ video.name}}</a>
+
+    {% endfor %}
+
+{% endblock %}

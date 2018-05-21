@@ -1,4 +1,4 @@
-"""quizes URL Configuration
+"""quizzes URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import quizzes, quiz, register, home, marks
+from .views import quizzes, quiz, register, home, marks, videos, video
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register', register, name="register"),
     path('quizzes', quizzes),
+    path('videos', videos),
+    path('videos/<int:id>', video),
     path('quizzes/marks', marks),
     path('quizzes/<int:id>', quiz),
     path('', home, name="home"),

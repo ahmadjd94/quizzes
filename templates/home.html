@@ -18,13 +18,11 @@
         <h1><a href="/">Cars Finder</a></h1>
 
         <ul class="list-inline">
-        <li class="list-inline-item" ><a href="/"></a>About Us</li>
-
-
 
         {% if user.is_authenticated %}
             <li class="list-inline-item"><a href="/quizzes">Quizzes</a></li>
             <li class="list-inline-item"><a href="/videos">Videos</a></li>
+
             <li class="list-inline-item"><a href="/quizzes/marks">My Quizzes</a></li>
             <li class="list-inline-item"><a href="/accounts/logout">LogOut</a></li>
         {%else%}
@@ -45,15 +43,15 @@
       <div class="container">
 
     <div class="col-6">
+        nfwqjkdnwqjkdn
       {% block content %}
             {% endblock %}
     </div>
       </div>
 
-
   </div>
   <div class="col-6 col-md-4">
-
+      <div id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;background-color:#transparent; border:1px solid #333333;"><div id="rsswidget" style="height:800px;"><iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1526849336661&amp;x=http%3A%2F%2Ffeeds.feedburner.com%2FMotorAuthority2&amp;w=200&amp;h=500&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=true&amp;lc=0000FF&amp;ls=16&amp;lb=true&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:100%; height:100%;" id="rssOutput">Reading RSS Feed ...</iframe></div><div style="text-align:right;margin-bottom:0;border-top:1px solid #333333;" id="widgetbottom"><span style="font-size:70%">&nbsp;</span><br></div></div>
   </div>
 </div>
 

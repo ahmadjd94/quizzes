@@ -1,0 +1,14 @@
+
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    {% for mark in marks%}
+        <h2>{{ mark.quiz.name}} </h2>
+        current mark is {{ mark.result}}
+        <a href="/quizzes/{{mark.quiz.id}}"><h4>take quiz again </h4></a>
+
+    {% endfor %}
+
+{% endblock %}
