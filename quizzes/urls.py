@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import quizzes, quiz, register, home, marks, videos, video
+from .views import quizzes, quiz, register, home, marks, videos, video, video_comment
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +27,7 @@ urlpatterns = [
     path('quizzes', quizzes),
     path('videos', videos),
     path('videos/<int:id>', video),
+    path('videos/<int:video_id>/comments', video_comment),
     path('quizzes/marks', marks),
     path('quizzes/<int:id>', quiz),
     path('', home, name="home"),

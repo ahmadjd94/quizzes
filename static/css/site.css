@@ -1,0 +1,10 @@
+.user-comment {
+    border-style: solid;
+    border-color:black;
+    border-width: 0.1px;
+    margin-top:10px;
+}
+.user-comment > *{
+    margin: 0px 0px 10px 10px
+
+}
