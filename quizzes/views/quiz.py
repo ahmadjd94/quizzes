@@ -3,7 +3,10 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.forms import Form
 
+from django.core.exceptions import ObjectDoesNotExist
+
 from ..models import Quiz, Choice, Mark
+
 
 
 def quizzes(request):
@@ -25,34 +28,35 @@ def quizzes(request):
 def quiz(request, *args, **kwargs):
     if not request.user.is_authenticated:
         return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
-    print(kwargs)
+
     quiz_object = Quiz.objects.get(**kwargs)
     quiz_id = kwargs["id"]
     if request.method == 'POST':
 
         f = Form(request.POST)
 
-        ids = []
+        ids = set()
         for k, v in f.data.items():
             if k == "csrfmiddlewaretoken":
                 continue
             else:
-                ids += v
+                ids.add(v)
         kwargs = {"id__in": ids}
-        choices = Choice.objects.filter(**kwargs).values("correct")
+
+        choices = Choice.objects.filter(**kwargs)
 
         correct_choices = 0
         for choice in choices:
-            if choice["correct"]:
+            if choice.correct:
                 correct_choices += 1
 
-        mark_kwargs = {"user": request.user.id, "quiz": quiz_id }
+        mark_kwargs = {"user": request.user.id, "quiz": quiz_id}
         exam_result = int(correct_choices / len(ids) * 100)
         try:
             mark = Mark.objects.get(**mark_kwargs)
             mark .result = exam_result
-        except Exception:
-            mark = Mark(user=request.user, quiz=quiz_object, result = exam_result)
+        except ObjectDoesNotExist:
+            mark = Mark(user=request.user, quiz=quiz_object, result=exam_result)
 
         mark.save()
 
