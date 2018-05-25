@@ -31,4 +31,5 @@ urlpatterns = [
     path('quizzes/marks', marks),
     path('quizzes/<int:id>', quiz),
     path('', home, name="home"),
+    path('oauth/', include('social_django.urls', namespace='social')),  # <--
 ]

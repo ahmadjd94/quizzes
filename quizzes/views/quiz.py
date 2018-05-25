@@ -8,7 +8,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from ..models import Quiz, Choice, Mark
 
 
-
 def quizzes(request):
 
     quizzes_data = Quiz.objects.all()
