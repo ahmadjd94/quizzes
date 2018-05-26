@@ -8,7 +8,7 @@
 <br>
 <h3>Comments</h3>
         {% for comment in comments%}
-        <div class="user-comment rounded-right">
+        <div class="content-block rounded-right">
         <h4>{{ comment.user.username}}</h4>
                 <h4>{{ comment.title}}</h4>
                 <p>{{ comment.body}}</p>
@@ -19,6 +19,8 @@
         <form action="/videos/{{video.id}}/comments" method="post">
                 {% csrf_token %}
                 {{ form }}
-                <input type="submit" value="Submit" />
+                <br>
+
+                <input type="submit" value="Submit" class="btn btn-primary" />
         </form>
 {% endblock %}

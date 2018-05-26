@@ -3,8 +3,10 @@
 {% block content %}
 
     {% for video in videos%}
-        <a href="/videos/{{video.id}}">{{ video.name}}</a>
-
+    <div class="content-block">
+    <a href="/videos/{{video.id}}"><h3>{{ video.name}}</h3></a>
+        <p>{{video.story}}</p>
+    </div>
     {% endfor %}
 
 {% endblock %}

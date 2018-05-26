@@ -14,26 +14,22 @@
 
 
         <nav class="navbar navbar-dark bg-dark">
-
-        <h1><a href="/">Cars Finder</a></h1>
+            <a href="/">
+        <img src="{% static 'images/logo.png' %}" id="logo-image">
+                <h2 id="logo-name" class="link">Car Finder</h2>
+            </a>
 
         <ul class="list-inline">
-        <li class="list-inline-item" ><a href="/"></a>About Us</li>
-
-
 
         {% if user.is_authenticated %}
-            <li class="list-inline-item"><a href="/quizzes">Quizzes</a></li>
-            <li class="list-inline-item"><a href="/videos">Videos</a></li>
-            <li class="list-inline-item"><a href="/quizzes/marks">My Quizzes</a></li>
-            <li class="list-inline-item"><a href="/accounts/logout">LogOut</a></li>
-        {%else%}
-            <li class="list-inline-item"><a href="/accounts/register">Register</a></li>
-            <!--<li class="list-inline-item"><a href="/accounts/login">Login</a></li>-->
-            <li>
-                <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
-            </li>
+            <li class="list-inline-item"><a class="link" href="/quizzes">Quizzes</a></li>
+            <li class="list-inline-item"><a class="link" href="/videos">Videos</a></li>
 
+            <li class="list-inline-item"><a class="link" href="/quizzes/marks">My Quizzes</a></li>
+            <li class="list-inline-item"><a class="link" href="/accounts/logout">Log Out</a></li>
+        {%else%}
+            <li class="list-inline-item"><a class="link" href="/accounts/register">Register</a></li>
+            <li class="list-inline-item"><a class="link" href="/accounts/login">Login</a></li>
         {%endif%}
 
         </ul>
