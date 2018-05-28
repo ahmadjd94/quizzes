@@ -30,6 +30,9 @@
         {%else%}
             <li class="list-inline-item"><a class="link" href="/accounts/register">Register</a></li>
             <li class="list-inline-item"><a class="link" href="/accounts/login">Login</a></li>
+            <li>
+                <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+            </li>
         {%endif%}
 
         </ul>
