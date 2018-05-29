@@ -1,12 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+    {% if videos%}
+        {% for video in videos%}
+            <div class="content-block">
+            <a href="/videos/{{video.id}}"><h3>{{ video.name}}</h3></a>
+                <p>{{video.story}}</p>
+            </div>
+        {% endfor %}
 
-    {% for video in videos%}
-    <div class="content-block">
-    <a href="/videos/{{video.id}}"><h3>{{ video.name}}</h3></a>
-        <p>{{video.story}}</p>
-    </div>
-    {% endfor %}
-
+    {%else%}
+        <h3>There is no videos currently available</h3>
+    {% endif %}
 {% endblock %}

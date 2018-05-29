@@ -3,12 +3,16 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+    {% if quizzes%}
 
-    {% for mark in marks%}
-        <h2>{{ mark.quiz.name}} </h2>
-        current mark is {{ mark.result}}
-        <a href="/quizzes/{{mark.quiz.id}}"><h4>take quiz again </h4></a>
+        {% for mark in marks%}
+            <h2>{{ mark.quiz.name}} </h2>
+            current mark is {{ mark.result}}
+            <a href="/quizzes/{{mark.quiz.id}}"><h4>take quiz again </h4></a>
 
-    {% endfor %}
+        {% endfor %}
+    {%else%}
+        <h3>Its seems like you have'nt taken any quizzes before</h3>
+    {% endif %}
 
 {% endblock %}

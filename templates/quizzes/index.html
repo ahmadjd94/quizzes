@@ -1,11 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    {% for quiz in quizzes%}
-
-        <h3><a href="/quizzes/{{ quiz.id }}">{{ quiz.name }}</a></h3>
-        <p>{{ quiz.description }}</p>
-
-    {% endfor %}
+    {% if quizzes%}
+        {% for quiz in quizzes%}
+            <h3><a href="/quizzes/{{ quiz.id }}">{{ quiz.name }}</a></h3>
+            <p>{{ quiz.description }}</p>
+        {% endfor %}
+    {%else%}
+        <h3>There is currently no Quizzes available</h3>
+    {% endif %}
 
 {% endblock %}
