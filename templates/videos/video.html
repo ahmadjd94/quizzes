@@ -3,13 +3,13 @@
 {% block content %}
 <h2>{{ video.name}}</h2>
         {{ video.widget| safe}}
-        {{ video.story}}
+        <p>{{ video.story}}</p>
 
 <br>
 <h3>Comments</h3>
         {% for comment in comments%}
         <div class="content-block rounded-right">
-        <h4>{{ comment.user.username}}</h4>
+        <p class="comment-username">{{ comment.user.username}}</p>
                 <h4>{{ comment.title}}</h4>
                 <p>{{ comment.body}}</p>
         </div>
@@ -21,6 +21,6 @@
                 {{ form }}
                 <br>
 
-                <input type="submit" value="Submit" class="btn btn-primary" />
+                <input type="submit" value="Submit" class="btn btn-primary comment-submit" />
         </form>
 {% endblock %}

@@ -55,6 +55,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'quizzes.urls'
 
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
@@ -85,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'quizzes',
         'USER': 'postgres',
-        'PASSWORD': 'ryml1811',
+        'PASSWORD': 'posrocket',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -96,18 +97,13 @@ DATABASES = {
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
+
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    }
 ]
 
 AUTHENTICATION_BACKENDS = (
