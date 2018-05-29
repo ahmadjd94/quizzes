@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import (quizzes, quiz, register, home, marks,
                     videos, video, video_comment, services,
-                    service, feedback)
+                    service, feedback, terms)
 
 
 urlpatterns = [
@@ -28,6 +28,7 @@ urlpatterns = [
     path('videos', videos),
     path('videos/<int:id>', video),
     path('videos/<int:video_id>/comments', video_comment),
+    path('terms', terms),
 
     path('feedback', feedback),
 
