@@ -20,10 +20,11 @@
             </a>
 
         <ul class="list-inline">
-
+            <li class="list-inline-item"><a class="link" href="/services">Service</a></li>
         {% if user.is_authenticated %}
             <li class="list-inline-item"><a class="link" href="/quizzes">Quizzes</a></li>
             <li class="list-inline-item"><a class="link" href="/videos">Videos</a></li>
+
 
             <li class="list-inline-item"><a class="link" href="/quizzes/marks">My Quizzes</a></li>
             <li class="list-inline-item"><a class="link" href="/accounts/logout">Log Out</a></li>
@@ -77,9 +78,11 @@
         <span class="text-muted">
 
         <ul class="list-inline">
-        <li class="list-inline-item" ><a href="/"> About Us </a></li>
-        <li class="list-inline-item"><a href="/legal">Terms and Conditions</a></li>
-        <li class="list-inline-item"><a href="/">My Quizzes</a></li>
+        <li class="list-inline-item" ><a class="link" href="/"> About Us </a></li>
+        <li class="list-inline-item"><a class="link" href="/legal">Terms and Conditions</a></li>
+        {% if user.is_authenticated %}
+                <li class="list-inline-item"><a class="link" href="/feedback">provide feedback</a></li>
+            {%endif%}
         </ul>
 
         </span>

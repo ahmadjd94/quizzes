@@ -50,10 +50,13 @@ def quiz(request, *args, **kwargs):
                 correct_choices += 1
 
         mark_kwargs = {"user": request.user.id, "quiz": quiz_id}
-        exam_result = int(correct_choices / len(ids) * 100)
+        try:
+            exam_result = int(correct_choices / len(ids) * 100)
+        except ZeroDivisionError:
+            exam_result = 0
         try:
             mark = Mark.objects.get(**mark_kwargs)
-            mark .result = exam_result
+            mark.result = exam_result
         except ObjectDoesNotExist:
             mark = Mark(user=request.user, quiz=quiz_object, result=exam_result)
 
@@ -62,7 +65,7 @@ def quiz(request, *args, **kwargs):
         result = {
             "correct_choices": correct_choices,
             "total_questions": len(ids),
-            "mark": correct_choices / len(ids) * 100
+            "mark": exam_result
         }
 
         return render(

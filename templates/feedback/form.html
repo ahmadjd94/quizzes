@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content%}
+<h3>Add your feedback</h3>
+        <form action="/feedback" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <br>
+
+                <input type="submit" value="Submit" class="btn btn-primary comment-submit" />
+        </form>
+{% endblock %}

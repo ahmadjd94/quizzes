@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+        {% for maintenance in maintenance_list%}
+        <div class="content-block rounded-right">
+                <h4>{{ maintenance.name}}</h4>
+                <p>{{ maintenance.phone}}</p>
+        </div>
+        {% endfor %}
+
+{% endblock %}

@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import quizzes, quiz, register, home, marks, videos, video, video_comment
+from .views import (quizzes, quiz, register, home, marks,
+                    videos, video, video_comment, services,
+                    service, feedback)
 
 
 urlpatterns = [
@@ -26,8 +28,17 @@ urlpatterns = [
     path('videos', videos),
     path('videos/<int:id>', video),
     path('videos/<int:video_id>/comments', video_comment),
+
+    path('feedback', feedback),
+
     path('quizzes/marks', marks),
+
     path('quizzes/<int:id>', quiz),
+
+    path('services', services),
+    path('services/<int:id>', service),
+
     path('', home, name="home"),
+
     path('oauth/', include('social_django.urls', namespace='social')),  # <--
 ]

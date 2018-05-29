@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    {% if services%}
+        {% for service in services%}
+            <h3><a href="/services/{{ service.id }}">{{ service.name }}</a></h3>
+        {% endfor %}
+    {%else%}
+        <h3>There is currently no services available</h3>
+    {% endif %}
+
+{% endblock %}
